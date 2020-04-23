@@ -11,8 +11,8 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
     @Bean(name="speakerService")
     public SpeakerService getSpeakerService() {
-        SpeakerServiceImpl speakerService = new SpeakerServiceImpl();
-        speakerService.setRepository(getSpeakerRepository());
+        SpeakerServiceImpl speakerService = new SpeakerServiceImpl(getSpeakerRepository());
+        // speakerService.setRepository(getSpeakerRepository());
         return speakerService;
     }
 
