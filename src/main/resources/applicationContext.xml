@@ -7,7 +7,8 @@
     <bean name="speakerRepository" class="com.pluralsight.repository.HibernateSpeakerRepositoryImpl"/>
 
     <bean name="speakerService" class="com.pluralsight.service.SpeakerServiceImpl">
-        <constructor-arg index="0" ref="speakerRepository"/>
+        <!--<constructor-arg index="0" ref="speakerRepository"/>-->
+        <property name="speakerRepository" ref="speakerRepository" />
     </bean>
 
 </beans>
