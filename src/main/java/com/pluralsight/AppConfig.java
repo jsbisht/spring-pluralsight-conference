@@ -12,9 +12,9 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class AppConfig {
     @Bean(name="speakerService")
-    @Scope(BeanDefinition.SCOPE_PROTOTYPE)  // gives new instance every time we request this bean from container
+    @Scope(BeanDefinition.SCOPE_SINGLETON)
     public SpeakerService getSpeakerService() {
-        SpeakerServiceImpl speakerService = new SpeakerServiceImpl(getSpeakerRepository());
+        SpeakerServiceImpl speakerService = new SpeakerServiceImpl();
         // speakerService.setRepository(getSpeakerRepository());
         return speakerService;
     }
