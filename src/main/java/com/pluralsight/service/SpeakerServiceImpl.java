@@ -8,6 +8,10 @@ import java.util.List;
 public class SpeakerServiceImpl implements SpeakerService {
     private SpeakerRepository repository;
 
+    public SpeakerServiceImpl() {
+        // no arg constructor
+    }
+
     public SpeakerServiceImpl(SpeakerRepository repository) {
         this.repository = repository;
     }
@@ -16,4 +20,7 @@ public class SpeakerServiceImpl implements SpeakerService {
         return repository.findAll();
     }
 
+    public void setSpeakerRepository(SpeakerRepository repository) {
+        this.repository = repository;
+    }
 }
